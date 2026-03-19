@@ -8,59 +8,110 @@
 <style>
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #0d0d0d, #000);
     color: white;
 }
 
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-}
-
+/* HEADER */
 .header {
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 20px 30px;
 }
 
 .logo {
-    font-size: 32px;
+    font-size: 38px;
     font-weight: bold;
+    background: linear-gradient(45deg, #ff00cc, #00f0ff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.brand {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #aaa;
+}
+
+.title {
+    font-size: 36px;
+    margin-top: 20px;
     color: gold;
 }
 
 .subtitle {
-    color: #ccc;
+    color: #bbb;
 }
 
-.card {
-    background: #111;
-    border-radius: 15px;
-    padding: 20px;
-    margin: 15px 0;
-    border: 1px solid rgba(255,215,0,0.2);
-}
-
-.price {
-    float: right;
-    color: gold;
-    font-weight: bold;
-}
-
-.btn {
-    display: inline-block;
-    background: gold;
+/* BOX */
+.box {
+    background: #f7f3eb;
     color: black;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    margin-top: 10px;
-    font-weight: bold;
-    cursor: pointer;
+    border-radius: 20px;
+    max-width: 900px;
+    margin: auto;
+    padding: 25px;
+    box-shadow: 0 0 25px rgba(255,215,0,0.2);
 }
 
-/* FORM POPUP */
+/* PLAN ITEM */
+.plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+}
+
+.plan:last-child {
+    border-bottom: none;
+}
+
+.plan-name {
+    font-weight: 600;
+}
+
+.plan-price {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 10px;
+    background: linear-gradient(45deg, gold, orange);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* COMBO */
+.combo {
+    background: #111;
+    border-radius: 20px;
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 900px;
+    color: white;
+    border: 1px solid gold;
+    box-shadow: 0 0 20px rgba(255,215,0,0.3);
+}
+
+.combo-title {
+    color: gold;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.strike {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* POPUP */
 .popup {
     display: none;
     position: fixed;
@@ -71,29 +122,29 @@ body {
     align-items: center;
 }
 
-.popup-content {
+.popup-box {
     background: #111;
     padding: 25px;
     border-radius: 10px;
     width: 300px;
 }
 
-form input, form button {
+.popup input {
     width: 100%;
+    margin: 10px 0;
     padding: 10px;
-    margin: 8px 0;
     border-radius: 8px;
     border: none;
-}
-
-form input {
     background: #222;
     color: white;
 }
 
-form button {
+.popup button {
+    width: 100%;
+    padding: 10px;
     background: gold;
-    color: black;
+    border: none;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -103,51 +154,73 @@ form button {
 
 <body>
 
-<div class="container">
-
+<!-- HEADER -->
 <div class="header">
-    <div class="logo">Beatora Design</div>
-    <p class="subtitle">Affordable Digital Solutions</p>
+    <div class="logo">beat<span style="color:white;">ora</span></div>
+    <div class="brand">DESIGN</div>
+    <div class="title">Pricing Plans</div>
+    <div class="subtitle">Affordable Digital Solutions for Your Business</div>
 </div>
 
-<!-- PRODUCTS -->
-<div class="card">
-    Templates + Captions <span class="price">₹349</span><br>
-    <button class="btn" onclick="openForm('Templates + Captions ₹349')">I'm Interested</button>
+<!-- PRICING BOX -->
+<div class="box">
+
+    <div class="plan">
+        <div>
+            <div class="plan-name">2 Week (14 Days) Templates + 5 Ready-Made Captions</div>
+            <button class="btn" onclick="openForm('Templates + Captions ₹349')">Add Interest</button>
+        </div>
+        <div class="plan-price">₹349</div>
+    </div>
+
+    <div class="plan">
+        <div>
+            <div class="plan-name">2 Week (14 Days) Templates (Without Captions)</div>
+            <button class="btn" onclick="openForm('Templates ₹299')">Add Interest</button>
+        </div>
+        <div class="plan-price">₹299</div>
+    </div>
+
+    <div class="plan">
+        <div>
+            <div class="plan-name">Website for Restaurant/Cafe</div>
+            <small>(with Payment Option, without Personal Domain)</small><br>
+            <button class="btn" onclick="openForm('Website ₹2499')">Add Interest</button>
+        </div>
+        <div class="plan-price">₹2,499</div>
+    </div>
+
+    <div class="plan">
+        <div>
+            <div class="plan-name">Website with Personal Domain</div>
+            <button class="btn" onclick="openForm('Website + Domain ₹5999')">Add Interest</button>
+        </div>
+        <div class="plan-price">₹5,999</div>
+    </div>
+
+    <div class="plan">
+        <div>
+            <div class="plan-name">Publishable Application on Play Store</div>
+            <button class="btn" onclick="openForm('App ₹6999')">Add Interest</button>
+        </div>
+        <div class="plan-price">₹6,999</div>
+    </div>
+
 </div>
 
-<div class="card">
-    Templates Only <span class="price">₹299</span><br>
-    <button class="btn" onclick="openForm('Templates Only ₹299')">I'm Interested</button>
+<!-- COMBO SECTION -->
+<div class="combo">
+    <div class="combo-title">Combo Offer (Website + Application)</div>
+    <div>Original Price: <span class="strike">₹12,998</span></div>
+    <div style="font-size:22px; color:gold;">Special Offer: ₹9,999</div>
+    <button class="btn" onclick="openForm('Combo ₹9999')">Add Interest</button>
 </div>
 
-<div class="card">
-    Restaurant Website <span class="price">₹2,499</span><br>
-    <button class="btn" onclick="openForm('Restaurant Website ₹2,499')">I'm Interested</button>
-</div>
-
-<div class="card">
-    Website with Domain <span class="price">₹5,999</span><br>
-    <button class="btn" onclick="openForm('Website with Domain ₹5,999')">I'm Interested</button>
-</div>
-
-<div class="card">
-    Mobile App <span class="price">₹6,999</span><br>
-    <button class="btn" onclick="openForm('Mobile App ₹6,999')">I'm Interested</button>
-</div>
-
-<div class="card" style="border:2px solid gold;">
-    Combo Offer ₹9,999<br>
-    <button class="btn" onclick="openForm('Combo Offer ₹9,999')">I'm Interested</button>
-</div>
-
-</div>
-
-<!-- POPUP FORM -->
+<!-- POPUP -->
 <div class="popup" id="popup">
-    <div class="popup-content">
+    <div class="popup-box">
         <h3>Enter Details</h3>
-        <form id="leadForm">
+        <form id="form">
             <input type="text" id="name" placeholder="Name" required>
             <input type="tel" id="phone" placeholder="Phone" required>
             <input type="text" id="business" placeholder="Business Name" required>
@@ -157,25 +230,23 @@ form button {
 </div>
 
 <script>
-let selectedProduct = "";
+let selected = "";
 
-function openForm(product) {
-    selectedProduct = product;
+function openForm(plan){
+    selected = plan;
     document.getElementById("popup").style.display = "flex";
 }
 
-document.getElementById("leadForm").addEventListener("submit", function(e){
+document.getElementById("form").addEventListener("submit", function(e){
     e.preventDefault();
 
     let name = document.getElementById("name").value;
     let phone = document.getElementById("phone").value;
     let business = document.getElementById("business").value;
 
-    let message = `New Lead:%0AName: ${name}%0APhone: ${phone}%0ABusiness: ${business}%0ASelected Plan: ${selectedProduct}`;
+    let msg = `Hi, I'm interested in ${selected}%0AName: ${name}%0APhone: ${phone}%0ABusiness: ${business}`;
 
-    let url = `https://wa.me/919021268038?text=${message}`;
-
-    window.open(url, "_blank");
+    window.open(`https://wa.me/919021268038?text=${msg}`, "_blank");
 });
 </script>
 
