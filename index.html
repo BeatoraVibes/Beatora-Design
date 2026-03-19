@@ -19,7 +19,6 @@ body {
     padding: 20px;
 }
 
-/* HEADER */
 .header {
     text-align: center;
     padding: 40px 20px;
@@ -35,7 +34,6 @@ body {
     color: #ccc;
 }
 
-/* CARD */
 .card {
     background: #111;
     border-radius: 15px;
@@ -44,30 +42,46 @@ body {
     border: 1px solid rgba(255,215,0,0.2);
 }
 
-/* PRICING */
 .price {
     float: right;
     color: gold;
     font-weight: bold;
 }
 
-/* BUTTON */
 .btn {
     display: inline-block;
     background: gold;
     color: black;
-    padding: 12px 25px;
-    border-radius: 30px;
+    padding: 10px 20px;
+    border-radius: 25px;
     text-decoration: none;
-    margin-top: 20px;
+    margin-top: 10px;
     font-weight: bold;
+    cursor: pointer;
 }
 
-/* FORM */
+/* FORM POPUP */
+.popup {
+    display: none;
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #111;
+    padding: 25px;
+    border-radius: 10px;
+    width: 300px;
+}
+
 form input, form button {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
+    padding: 10px;
+    margin: 8px 0;
     border-radius: 8px;
     border: none;
 }
@@ -84,19 +98,6 @@ form button {
     cursor: pointer;
 }
 
-/* FOOTER */
-.footer {
-    text-align: center;
-    margin-top: 40px;
-    color: #aaa;
-}
-
-.social a {
-    color: gold;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
 </style>
 </head>
 
@@ -104,87 +105,79 @@ form button {
 
 <div class="container">
 
-<!-- HEADER -->
 <div class="header">
     <div class="logo">Beatora Design</div>
-    <p class="subtitle">Affordable Digital Solutions for Your Business</p>
+    <p class="subtitle">Affordable Digital Solutions</p>
 </div>
 
-<!-- PRICING -->
+<!-- PRODUCTS -->
 <div class="card">
-    2 Week (14 Days) Templates + 5 Captions 
-    <span class="price">₹349</span>
-</div>
-
-<div class="card">
-    2 Week Templates (Without Captions)
-    <span class="price">₹299</span>
+    Templates + Captions <span class="price">₹349</span><br>
+    <button class="btn" onclick="openForm('Templates + Captions ₹349')">I'm Interested</button>
 </div>
 
 <div class="card">
-    Website for Restaurant/Cafe 
-    <span class="price">₹2,499</span>
+    Templates Only <span class="price">₹299</span><br>
+    <button class="btn" onclick="openForm('Templates Only ₹299')">I'm Interested</button>
 </div>
 
 <div class="card">
-    Website with Personal Domain 
-    <span class="price">₹5,999</span>
+    Restaurant Website <span class="price">₹2,499</span><br>
+    <button class="btn" onclick="openForm('Restaurant Website ₹2,499')">I'm Interested</button>
 </div>
 
 <div class="card">
-    Publishable Application 
-    <span class="price">₹6,999</span>
+    Website with Domain <span class="price">₹5,999</span><br>
+    <button class="btn" onclick="openForm('Website with Domain ₹5,999')">I'm Interested</button>
+</div>
+
+<div class="card">
+    Mobile App <span class="price">₹6,999</span><br>
+    <button class="btn" onclick="openForm('Mobile App ₹6,999')">I'm Interested</button>
 </div>
 
 <div class="card" style="border:2px solid gold;">
-    <b>Combo Offer (Website + App)</b><br>
-    <strike>₹12,998</strike> → <b style="color:gold;">₹9,999</b>
+    Combo Offer ₹9,999<br>
+    <button class="btn" onclick="openForm('Combo Offer ₹9,999')">I'm Interested</button>
 </div>
 
-<!-- FORM -->
-<div class="card">
-    <h2>Share Your Interest</h2>
-    <form id="leadForm">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="tel" id="phone" placeholder="Phone Number" required>
-        <input type="text" id="business" placeholder="Business Name" required>
-        <button type="submit">Submit & Contact</button>
-    </form>
 </div>
 
-<!-- CONTACT -->
-<div class="card">
-    <h2>Contact</h2>
-    <p>📞 9021268038</p>
-    
-    <div class="social">
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
+<!-- POPUP FORM -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h3>Enter Details</h3>
+        <form id="leadForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="tel" id="phone" placeholder="Phone" required>
+            <input type="text" id="business" placeholder="Business Name" required>
+            <button type="submit">Send</button>
+        </form>
     </div>
 </div>
 
-<div class="footer">
-    © 2026 Beatora Design
-</div>
-
-</div>
-
-<!-- WHATSAPP SCRIPT -->
 <script>
-document.getElementById("leadForm").addEventListener("submit", function(e) {
+let selectedProduct = "";
+
+function openForm(product) {
+    selectedProduct = product;
+    document.getElementById("popup").style.display = "flex";
+}
+
+document.getElementById("leadForm").addEventListener("submit", function(e){
     e.preventDefault();
 
     let name = document.getElementById("name").value;
     let phone = document.getElementById("phone").value;
     let business = document.getElementById("business").value;
 
-    let message = `New Lead:%0AName: ${name}%0APhone: ${phone}%0ABusiness: ${business}`;
+    let message = `New Lead:%0AName: ${name}%0APhone: ${phone}%0ABusiness: ${business}%0ASelected Plan: ${selectedProduct}`;
 
-    let whatsappURL = `https://wa.me/919021268038?text=${message}`;
+    let url = `https://wa.me/919021268038?text=${message}`;
 
-    window.open(whatsappURL, '_blank');
+    window.open(url, "_blank");
 });
 </script>
 
 </body>
-  </html>
+</html>
