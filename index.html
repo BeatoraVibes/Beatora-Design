@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beatora Design</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    color: white;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: gold;
+}
+
+.subtitle {
+    color: #ccc;
+}
+
+/* CARD */
+.card {
+    background: #111;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid rgba(255,215,0,0.2);
+}
+
+/* PRICING */
+.price {
+    float: right;
+    color: gold;
+    font-weight: bold;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    background: gold;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* FORM */
+form input, form button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+form input {
+    background: #222;
+    color: white;
+}
+
+form button {
+    background: gold;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #aaa;
+}
+
+.social a {
+    color: gold;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">Beatora Design</div>
+    <p class="subtitle">Affordable Digital Solutions for Your Business</p>
+</div>
+
+<!-- PRICING -->
+<div class="card">
+    2 Week (14 Days) Templates + 5 Captions 
+    <span class="price">₹349</span>
+</div>
+
+<div class="card">
+    2 Week Templates (Without Captions)
+    <span class="price">₹299</span>
+</div>
+
+<div class="card">
+    Website for Restaurant/Cafe 
+    <span class="price">₹2,499</span>
+</div>
+
+<div class="card">
+    Website with Personal Domain 
+    <span class="price">₹5,999</span>
+</div>
+
+<div class="card">
+    Publishable Application 
+    <span class="price">₹6,999</span>
+</div>
+
+<div class="card" style="border:2px solid gold;">
+    <b>Combo Offer (Website + App)</b><br>
+    <strike>₹12,998</strike> → <b style="color:gold;">₹9,999</b>
+</div>
+
+<!-- FORM -->
+<div class="card">
+    <h2>Share Your Interest</h2>
+    <form id="leadForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="text" id="business" placeholder="Business Name" required>
+        <button type="submit">Submit & Contact</button>
+    </form>
+</div>
+
+<!-- CONTACT -->
+<div class="card">
+    <h2>Contact</h2>
+    <p>📞 9021268038</p>
+    
+    <div class="social">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+    </div>
+</div>
+
+<div class="footer">
+    © 2026 Beatora Design
+</div>
+
+</div>
+
+<!-- WHATSAPP SCRIPT -->
+<script>
+document.getElementById("leadForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let business = document.getElementById("business").value;
+
+    let message = `New Lead:%0AName: ${name}%0APhone: ${phone}%0ABusiness: ${business}`;
+
+    let whatsappURL = `https://wa.me/919021268038?text=${message}`;
+
+    window.open(whatsappURL, '_blank');
+});
+</script>
+
+</body>
+  </html>
