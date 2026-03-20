@@ -46,7 +46,7 @@ body {
     color: #bbb;
 }
 
-/* SOCIAL */
+/* SOCIAL TOP */
 .social {
     margin-top: 20px;
 }
@@ -67,7 +67,7 @@ body {
     color: black;
 }
 
-/* BOX */
+/* PRICING BOX */
 .box {
     background: #f7f3eb;
     color: black;
@@ -84,11 +84,16 @@ body {
     border-bottom: 1px solid #ddd;
 }
 
+.plan:last-child {
+    border-bottom: none;
+}
+
 .plan-name {
     margin-bottom: 10px;
     font-weight: 600;
 }
 
+/* PRICE + BUTTON SAME LINE */
 .plan-bottom {
     display: flex;
     justify-content: space-between;
@@ -100,6 +105,7 @@ body {
     font-size: 18px;
 }
 
+/* BUTTON */
 .btn {
     background: linear-gradient(45deg, gold, orange);
     border: none;
@@ -117,11 +123,17 @@ body {
     padding: 20px;
     max-width: 900px;
     border: 1px solid gold;
+    box-shadow: 0 0 20px rgba(255,215,0,0.3);
 }
 
 .combo-title {
     color: gold;
     font-size: 22px;
+}
+
+.strike {
+    text-decoration: line-through;
+    color: #999;
 }
 
 /* POPUP */
@@ -161,6 +173,34 @@ body {
     font-weight: bold;
 }
 
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,215,0,0.2);
+}
+
+.footer p {
+    color: #aaa;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: 18px;
+    color: gold;
+    border: 1px solid gold;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    background: gold;
+    color: black;
+}
+
 </style>
 </head>
 
@@ -171,21 +211,32 @@ body {
     <div class="logo">beat<span style="color:white;">ora</span></div>
     <div class="brand">DESIGN</div>
     <div class="title">Pricing Plans</div>
-    <div class="subtitle">Affordable Digital Solutions</div>
+    <div class="subtitle">Affordable Digital Solutions for Your Business</div>
+
+    <!-- TOP SOCIAL -->
+    <div class="social">
+        <a href="https://instagram.com/yourusername" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+    </div>
+</div>
 
 <!-- PRICING -->
 <div class="box">
 
     <div class="plan">
-        <div class="plan-name">2 Week Templates + 5 Captions</div>
+        <div class="plan-name">2 Week (14 Days) Templates + 5 Ready-Made Captions</div>
         <div class="plan-bottom">
             <div class="plan-price">₹349</div>
-            <button class="btn" onclick="openForm('Templates ₹349')">Add Interest</button>
+            <button class="btn" onclick="openForm('Templates + Captions ₹349')">Add Interest</button>
         </div>
     </div>
 
     <div class="plan">
-        <div class="plan-name">2 Week Templates (Without Captions)</div>
+        <div class="plan-name">2 Week (14 Days) Templates (Without Captions)</div>
         <div class="plan-bottom">
             <div class="plan-price">₹299</div>
             <button class="btn" onclick="openForm('Templates ₹299')">Add Interest</button>
@@ -194,6 +245,7 @@ body {
 
     <div class="plan">
         <div class="plan-name">Website for Restaurant/Cafe</div>
+        <small>(with Payment Option, without Personal Domain)</small>
         <div class="plan-bottom">
             <div class="plan-price">₹2,499</div>
             <button class="btn" onclick="openForm('Website ₹2499')">Add Interest</button>
@@ -204,12 +256,12 @@ body {
         <div class="plan-name">Website with Personal Domain</div>
         <div class="plan-bottom">
             <div class="plan-price">₹5,999</div>
-            <button class="btn" onclick="openForm('Domain ₹5999')">Add Interest</button>
+            <button class="btn" onclick="openForm('Website + Domain ₹5999')">Add Interest</button>
         </div>
     </div>
 
     <div class="plan">
-        <div class="plan-name">Publishable Application</div>
+        <div class="plan-name">Publishable Application on Play Store</div>
         <div class="plan-bottom">
             <div class="plan-price">₹6,999</div>
             <button class="btn" onclick="openForm('App ₹6999')">Add Interest</button>
@@ -220,9 +272,9 @@ body {
 
 <!-- COMBO -->
 <div class="combo">
-    <div class="combo-title">Combo Offer</div>
-    <div><s>₹12,998</s></div>
-    <div style="color:gold; font-size:22px;">₹9,999</div>
+    <div class="combo-title">Combo Offer (Website + Application)</div>
+    <div>Original Price: <span class="strike">₹12,998</span></div>
+    <div style="color:gold; font-size:22px;">Special Offer: ₹9,999</div>
     <button class="btn" onclick="openForm('Combo ₹9999')">Add Interest</button>
 </div>
 
@@ -238,8 +290,11 @@ body {
     </div>
 </div>
 
-    <!-- SOCIAL ICONS -->
-    <div class="social">
+<!-- FOOTER -->
+<div class="footer">
+    <p>Connect with us</p>
+
+    <div class="footer-social">
         <a href="https://instagram.com/_3107_daksh" target="_blank">
             <i class="fab fa-instagram"></i>
         </a>
@@ -247,8 +302,10 @@ body {
             <i class="fab fa-linkedin-in"></i>
         </a>
     </div>
+
+    <p style="font-size:12px;">© 2026 Beatora Design</p>
 </div>
-    
+
 <script>
 let selected = "";
 
