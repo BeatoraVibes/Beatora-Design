@@ -43,7 +43,7 @@ body {
     color: #bbb;
 }
 
-/* BOX */
+/* PRICING BOX */
 .box {
     background: #f7f3eb;
     color: black;
@@ -54,14 +54,10 @@ body {
     box-shadow: 0 0 25px rgba(255,215,0,0.2);
 }
 
-/* PLAN ITEM */
+/* PLAN */
 .plan {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 18px;
     border-bottom: 1px solid #ddd;
-    flex-wrap: wrap;
 }
 
 .plan:last-child {
@@ -69,7 +65,15 @@ body {
 }
 
 .plan-name {
+    margin-bottom: 10px;
     font-weight: 600;
+}
+
+/* PRICE + BUTTON SAME LINE */
+.plan-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .plan-price {
@@ -79,10 +83,9 @@ body {
 
 /* BUTTON */
 .btn {
-    margin-top: 10px;
     background: linear-gradient(45deg, gold, orange);
     border: none;
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
@@ -162,53 +165,53 @@ body {
     <div class="subtitle">Affordable Digital Solutions for Your Business</div>
 </div>
 
-<!-- PRICING BOX -->
+<!-- PRICING -->
 <div class="box">
 
     <div class="plan">
-        <div>
-            <div class="plan-name">2 Week (14 Days) Templates + 5 Ready-Made Captions</div>
+        <div class="plan-name">2 Week (14 Days) Templates + 5 Ready-Made Captions</div>
+        <div class="plan-bottom">
+            <div class="plan-price">₹349</div>
             <button class="btn" onclick="openForm('Templates + Captions ₹349')">Add Interest</button>
         </div>
-        <div class="plan-price">₹349</div>
     </div>
 
     <div class="plan">
-        <div>
-            <div class="plan-name">2 Week (14 Days) Templates (Without Captions)</div>
+        <div class="plan-name">2 Week (14 Days) Templates (Without Captions)</div>
+        <div class="plan-bottom">
+            <div class="plan-price">₹299</div>
             <button class="btn" onclick="openForm('Templates ₹299')">Add Interest</button>
         </div>
-        <div class="plan-price">₹299</div>
     </div>
 
     <div class="plan">
-        <div>
-            <div class="plan-name">Website for Restaurant/Cafe</div>
-            <small>(with Payment Option, without Personal Domain)</small><br>
+        <div class="plan-name">Website for Restaurant/Cafe</div>
+        <small>(with Payment Option, without Personal Domain)</small>
+        <div class="plan-bottom">
+            <div class="plan-price">₹2,499</div>
             <button class="btn" onclick="openForm('Website ₹2499')">Add Interest</button>
         </div>
-        <div class="plan-price">₹2,499</div>
     </div>
 
     <div class="plan">
-        <div>
-            <div class="plan-name">Website with Personal Domain</div>
+        <div class="plan-name">Website with Personal Domain</div>
+        <div class="plan-bottom">
+            <div class="plan-price">₹5,999</div>
             <button class="btn" onclick="openForm('Website + Domain ₹5999')">Add Interest</button>
         </div>
-        <div class="plan-price">₹5,999</div>
     </div>
 
     <div class="plan">
-        <div>
-            <div class="plan-name">Publishable Application on Play Store</div>
+        <div class="plan-name">Publishable Application on Play Store</div>
+        <div class="plan-bottom">
+            <div class="plan-price">₹6,999</div>
             <button class="btn" onclick="openForm('App ₹6999')">Add Interest</button>
         </div>
-        <div class="plan-price">₹6,999</div>
     </div>
 
 </div>
 
-<!-- COMBO SECTION -->
+<!-- COMBO -->
 <div class="combo">
     <div class="combo-title">Combo Offer (Website + Application)</div>
     <div>Original Price: <span class="strike">₹12,998</span></div>
@@ -216,7 +219,7 @@ body {
     <button class="btn" onclick="openForm('Combo ₹9999')">Add Interest</button>
 </div>
 
-<!-- POPUP -->
+<!-- POPUP FORM -->
 <div class="popup" id="popup">
     <div class="popup-box">
         <h3>Enter Details</h3>
