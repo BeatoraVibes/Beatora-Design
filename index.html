@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -32,23 +33,24 @@
 
     nav{
       width:100%;
-      padding:18px 8%;
+      padding:18px 6%;
       display:flex;
       justify-content:space-between;
       align-items:center;
       position:fixed;
       top:0;
       z-index:999;
-      background:rgba(0,0,0,0.4);
-      backdrop-filter:blur(10px);
+      background:rgba(0,0,0,0.45);
+      backdrop-filter:blur(12px);
     }
 
     .logo{
       font-size:30px;
       font-weight:800;
-      background:linear-gradient(90deg,#ff00cc,#3333ff,#00f7ff);
+      background:linear-gradient(90deg,#ff00cc,#7f5cff,#00f7ff);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
+      white-space:nowrap;
     }
 
     nav ul{
@@ -58,8 +60,8 @@
     }
 
     nav ul li a{
-      font-size:15px;
       transition:0.3s;
+      font-size:15px;
     }
 
     nav ul li a:hover{
@@ -72,8 +74,9 @@
       background:linear-gradient(90deg,#ff00cc,#3333ff);
       color:white;
       font-weight:600;
-      transition:0.4s;
       display:inline-block;
+      transition:0.4s;
+      white-space:nowrap;
     }
 
     .btn:hover{
@@ -87,9 +90,9 @@
       min-height:100vh;
       display:flex;
       align-items:center;
-      justify-content:center;
-      padding:120px 8% 80px;
+      padding:140px 8% 100px;
       position:relative;
+      overflow:hidden;
     }
 
     .hero::before{
@@ -100,20 +103,20 @@
       background:#7f5cff;
       filter:blur(180px);
       opacity:0.25;
-      top:10%;
-      left:-10%;
+      top:-100px;
+      left:-150px;
     }
 
     .hero::after{
       content:'';
       position:absolute;
-      width:400px;
-      height:400px;
+      width:450px;
+      height:450px;
       background:#00c2ff;
       filter:blur(180px);
-      opacity:0.18;
-      bottom:0;
-      right:-10%;
+      opacity:0.15;
+      bottom:-100px;
+      right:-100px;
     }
 
     .hero-content{
@@ -126,22 +129,24 @@
     }
 
     .hero-text h1{
-      font-size:65px;
-      line-height:1.1;
-      margin-bottom:20px;
+      font-size:70px;
+      line-height:1.05;
+      margin-bottom:25px;
+      font-weight:800;
     }
 
     .hero-text h1 span{
-      background:linear-gradient(90deg,#ff00cc,#00f7ff);
+      background:linear-gradient(90deg,#ff00cc,#7f5cff,#00f7ff);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
     }
 
     .hero-text p{
-      color:#c9c9c9;
-      line-height:1.8;
+      color:#cfcfcf;
+      font-size:18px;
+      line-height:1.9;
       margin-bottom:35px;
-      font-size:17px;
+      max-width:650px;
     }
 
     .hero-buttons{
@@ -153,7 +158,7 @@
     .outline-btn{
       padding:12px 24px;
       border-radius:40px;
-      border:1px solid #555;
+      border:1px solid rgba(255,255,255,0.25);
       transition:0.4s;
     }
 
@@ -162,18 +167,56 @@
       color:#00f7ff;
     }
 
-    .hero-card{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:30px;
-      padding:25px;
-      backdrop-filter:blur(15px);
-      box-shadow:0 0 30px rgba(0,0,0,0.4);
+    .hero-right{
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
 
-    .hero-card img{
+    .glass-card{
       width:100%;
+      max-width:450px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:35px;
+      padding:40px;
+      backdrop-filter:blur(14px);
+      box-shadow:0 0 40px rgba(0,0,0,0.4);
+    }
+
+    .glass-card h2{
+      font-size:38px;
+      margin-bottom:15px;
+    }
+
+    .glass-card p{
+      color:#d0d0d0;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+    }
+
+    .stat-box{
+      background:#0f172a;
       border-radius:20px;
+      padding:20px;
+      text-align:center;
+    }
+
+    .stat-box h3{
+      font-size:30px;
+      color:#00f7ff;
+      margin-bottom:5px;
+    }
+
+    .stat-box p{
+      font-size:14px;
+      margin:0;
     }
 
     /* SECTION */
@@ -188,12 +231,13 @@
     }
 
     .section-title h2{
-      font-size:45px;
+      font-size:50px;
       margin-bottom:15px;
     }
 
     .section-title p{
-      color:#c5c5c5;
+      color:#cfcfcf;
+      font-size:18px;
     }
 
     /* SERVICES */
@@ -208,7 +252,7 @@
       background:rgba(255,255,255,0.04);
       border:1px solid rgba(255,255,255,0.08);
       padding:35px;
-      border-radius:25px;
+      border-radius:30px;
       transition:0.4s;
     }
 
@@ -218,18 +262,18 @@
     }
 
     .service-icon{
-      font-size:45px;
+      font-size:50px;
       margin-bottom:20px;
     }
 
     .service-box h3{
       margin-bottom:15px;
-      font-size:24px;
+      font-size:25px;
     }
 
     .service-box p{
-      color:#bcbcbc;
-      line-height:1.7;
+      color:#cfcfcf;
+      line-height:1.8;
     }
 
     /* PRICING */
@@ -246,8 +290,6 @@
       padding:40px 30px;
       border:1px solid rgba(255,255,255,0.08);
       transition:0.4s;
-      position:relative;
-      overflow:hidden;
     }
 
     .price-card:hover{
@@ -262,9 +304,9 @@
 
     .price{
       font-size:45px;
+      color:#00f7ff;
       font-weight:700;
       margin:20px 0;
-      color:#00f7ff;
     }
 
     .price-card ul{
@@ -275,6 +317,46 @@
     .price-card ul li{
       margin-bottom:15px;
       color:#d0d0d0;
+    }
+
+    /* COMBO OFFER */
+
+    .combo-offer{
+      margin-top:45px;
+      background:linear-gradient(90deg,#0f172a,#111827);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:40px;
+      border-radius:30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .combo-left h2{
+      font-size:38px;
+      margin-bottom:10px;
+    }
+
+    .combo-left p{
+      color:#d0d0d0;
+      font-size:18px;
+    }
+
+    .combo-right{
+      text-align:right;
+    }
+
+    .old-price{
+      color:#999;
+      text-decoration:line-through;
+      font-size:22px;
+    }
+
+    .combo-right h1{
+      font-size:52px;
+      color:#00f7ff;
     }
 
     /* PORTFOLIO */
@@ -289,7 +371,7 @@
       position:relative;
       overflow:hidden;
       border-radius:25px;
-      cursor:pointer;
+      height:320px;
     }
 
     .portfolio-item img{
@@ -306,14 +388,14 @@
     .overlay{
       position:absolute;
       inset:0;
-      background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);
+      background:linear-gradient(to top,rgba(0,0,0,0.95),transparent);
       display:flex;
       align-items:flex-end;
       padding:25px;
     }
 
     .overlay h3{
-      font-size:24px;
+      font-size:26px;
     }
 
     /* TESTIMONIAL */
@@ -321,18 +403,18 @@
     .testimonial{
       background:rgba(255,255,255,0.04);
       border:1px solid rgba(255,255,255,0.08);
-      padding:40px;
       border-radius:30px;
+      padding:45px;
       text-align:center;
       max-width:900px;
       margin:auto;
     }
 
     .testimonial p{
-      font-size:20px;
+      font-size:22px;
       line-height:1.8;
       color:#d0d0d0;
-      margin-bottom:25px;
+      margin-bottom:20px;
     }
 
     /* CONTACT */
@@ -343,40 +425,35 @@
       gap:40px;
     }
 
-    .contact-info{
+    .contact-info,
+    form{
       background:rgba(255,255,255,0.04);
-      padding:40px;
-      border-radius:30px;
       border:1px solid rgba(255,255,255,0.08);
+      border-radius:30px;
+      padding:40px;
     }
 
     .contact-info h3{
+      font-size:34px;
       margin-bottom:20px;
-      font-size:30px;
     }
 
     .contact-info p{
-      margin-bottom:15px;
       color:#d0d0d0;
-    }
-
-    form{
-      background:rgba(255,255,255,0.04);
-      padding:40px;
-      border-radius:30px;
-      border:1px solid rgba(255,255,255,0.08);
+      margin-bottom:15px;
+      line-height:1.8;
     }
 
     input,
     textarea{
       width:100%;
       padding:16px;
-      border:none;
-      outline:none;
-      border-radius:15px;
       margin-bottom:20px;
+      border:none;
+      border-radius:16px;
       background:#11172d;
       color:white;
+      outline:none;
     }
 
     textarea{
@@ -403,6 +480,18 @@
 
     @media(max-width:980px){
 
+      nav{
+        padding:15px 5%;
+      }
+
+      nav ul{
+        display:none;
+      }
+
+      .logo{
+        font-size:24px;
+      }
+
       .hero-content{
         grid-template-columns:1fr;
       }
@@ -412,27 +501,45 @@
       }
 
       .hero-text h1{
-        font-size:48px;
-      }
-
-      nav ul{
-        display:none;
+        font-size:55px;
       }
 
     }
 
     @media(max-width:600px){
 
+      .hero{
+        padding-top:130px;
+      }
+
       .hero-text h1{
-        font-size:38px;
+        font-size:58px;
+      }
+
+      .hero-text p{
+        font-size:16px;
       }
 
       .section-title h2{
-        font-size:34px;
+        font-size:40px;
       }
 
-      .price{
-        font-size:35px;
+      .combo-left h2{
+        font-size:30px;
+      }
+
+      .combo-right{
+        text-align:left;
+      }
+
+      .combo-right h1{
+        font-size:42px;
+      }
+
+      .btn,
+      .outline-btn{
+        width:100%;
+        text-align:center;
       }
 
     }
@@ -444,6 +551,7 @@
   <!-- NAVBAR -->
 
   <nav>
+
     <div class="logo">beatora design</div>
 
     <ul>
@@ -454,6 +562,7 @@
     </ul>
 
     <a href="#contact" class="btn">Hire Me</a>
+
   </nav>
 
   <!-- HERO -->
@@ -465,14 +574,16 @@
       <div class="hero-text">
 
         <h1>
-          Modern Websites & Apps
-          for <span>Growing Businesses</span>
+          Modern Websites &
+          Apps for
+          <span>Growing Businesses</span>
         </h1>
 
         <p>
-          Professional freelancer helping restaurants, cafes,
-          startups and local businesses build stunning websites,
-          ecommerce stores and publishable Android applications.
+          Professional freelancer helping restaurants,
+          cafes, startups and local businesses build
+          stunning websites, ecommerce stores and
+          publishable Android applications.
         </p>
 
         <div class="hero-buttons">
@@ -482,8 +593,44 @@
 
       </div>
 
-      <div class="hero-card">
-        <img src="1000024748.png" alt="Pricing">
+      <div class="hero-right">
+
+        <div class="glass-card">
+
+          <h2>Beatora Design</h2>
+
+          <p>
+            Affordable digital solutions for businesses,
+            creators and startups with premium UI,
+            modern design and smooth performance.
+          </p>
+
+          <div class="stats">
+
+            <div class="stat-box">
+              <h3>24/7</h3>
+              <p>Support</p>
+            </div>
+
+            <div class="stat-box">
+              <h3>100%</h3>
+              <p>Responsive</p>
+            </div>
+
+            <div class="stat-box">
+              <h3>Fast</h3>
+              <p>Delivery</p>
+            </div>
+
+            <div class="stat-box">
+              <h3>Pro</h3>
+              <p>Design</p>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
     </div>
@@ -504,36 +651,40 @@
       <div class="service-box">
         <div class="service-icon">🌐</div>
         <h3>Business Websites</h3>
+
         <p>
-          Responsive and premium websites for restaurants,
-          cafes, startups and local brands with modern UI.
+          Responsive and premium websites
+          for restaurants, cafes and startups.
         </p>
       </div>
 
       <div class="service-box">
         <div class="service-icon">🛒</div>
         <h3>Ecommerce Stores</h3>
+
         <p>
-          Online stores with product showcase, cart system,
-          payment gateway and mobile optimization.
+          Modern ecommerce stores with payment
+          gateway and mobile optimization.
         </p>
       </div>
 
       <div class="service-box">
         <div class="service-icon">📱</div>
         <h3>Android Apps</h3>
+
         <p>
-          Publishable Android applications with clean
-          interface and professional functionality.
+          Publishable Android applications
+          with premium and smooth UI.
         </p>
       </div>
 
       <div class="service-box">
         <div class="service-icon">🎨</div>
-        <h3>Social Media Templates</h3>
+        <h3>Social Media Designs</h3>
+
         <p>
-          Festival templates, promotional designs and
-          captions for growing brands and businesses.
+          Festival templates, promotional posts
+          and branding content for businesses.
         </p>
       </div>
 
@@ -553,7 +704,9 @@
     <div class="pricing-container">
 
       <div class="price-card">
+
         <h3>Template Pack</h3>
+
         <div class="price">₹349</div>
 
         <ul>
@@ -564,24 +717,30 @@
         </ul>
 
         <a href="#contact" class="btn">Get Started</a>
+
       </div>
 
       <div class="price-card">
+
         <h3>Restaurant Website</h3>
+
         <div class="price">₹2,499</div>
 
         <ul>
-          <li>✔ Responsive Website</li>
+          <li>✔ Premium Website</li>
           <li>✔ Payment Option</li>
-          <li>✔ Premium UI Design</li>
+          <li>✔ Responsive Design</li>
           <li>✔ Mobile Friendly</li>
         </ul>
 
         <a href="#contact" class="btn">Get Started</a>
+
       </div>
 
       <div class="price-card">
+
         <h3>Website + Domain</h3>
+
         <div class="price">₹5,999</div>
 
         <ul>
@@ -592,20 +751,50 @@
         </ul>
 
         <a href="#contact" class="btn">Get Started</a>
+
       </div>
 
       <div class="price-card">
-        <h3>Android App</h3>
+
+        <h3>Android Application</h3>
+
         <div class="price">₹6,999</div>
 
         <ul>
           <li>✔ Publishable APK</li>
           <li>✔ Modern UI</li>
-          <li>✔ Smooth Performance</li>
+          <li>✔ Fast Performance</li>
           <li>✔ Play Store Ready</li>
         </ul>
 
         <a href="#contact" class="btn">Get Started</a>
+
+      </div>
+
+    </div>
+
+    <!-- COMBO OFFER -->
+
+    <div class="combo-offer">
+
+      <div class="combo-left">
+
+        <h2>🔥 Combo Offer</h2>
+
+        <p>
+          Website + Android Application
+        </p>
+
+      </div>
+
+      <div class="combo-right">
+
+        <div class="old-price">
+          ₹12,998
+        </div>
+
+        <h1>₹9,999</h1>
+
       </div>
 
     </div>
@@ -618,30 +807,39 @@
 
     <div class="section-title">
       <h2>Portfolio</h2>
-      <p>Add your samples here later to build trust with clients.</p>
+      <p>Professional sample projects and client work.</p>
     </div>
 
     <div class="portfolio-grid">
 
       <div class="portfolio-item">
+
         <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop" alt="">
+
         <div class="overlay">
           <h3>Restaurant Website</h3>
         </div>
+
       </div>
 
       <div class="portfolio-item">
+
         <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop" alt="">
+
         <div class="overlay">
           <h3>Ecommerce Store</h3>
         </div>
+
       </div>
 
       <div class="portfolio-item">
+
         <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop" alt="">
+
         <div class="overlay">
-          <h3>Mobile App UI</h3>
+          <h3>Android App UI</h3>
         </div>
+
       </div>
 
     </div>
@@ -655,8 +853,9 @@
     <div class="testimonial">
 
       <p>
-        “Helping businesses build modern digital presence with
-        affordable pricing, premium UI and beginner-friendly support.”
+        “Helping businesses build modern digital
+        presence with affordable pricing and
+        premium quality design.”
       </p>
 
       <h3>— Beatora Design</h3>
@@ -671,7 +870,7 @@
 
     <div class="section-title">
       <h2>Contact Me</h2>
-      <p>Let’s build something amazing for your business.</p>
+      <p>Let’s build something amazing together.</p>
     </div>
 
     <div class="contact-container">
@@ -681,14 +880,17 @@
         <h3>Get In Touch</h3>
 
         <p>📞 +91 9021268038</p>
+
         <p>📧 yourmail@gmail.com</p>
+
         <p>📍 Maharashtra, India</p>
 
         <br>
 
         <p>
-          Available for websites, ecommerce stores,
-          Android apps and social media design work.
+          Available for websites,
+          ecommerce stores, Android apps
+          and social media designs.
         </p>
 
       </div>
@@ -699,7 +901,7 @@
 
         <input type="email" placeholder="Your Email" required>
 
-        <textarea placeholder="Tell about your project..." required></textarea>
+        <textarea placeholder="Tell me about your project..." required></textarea>
 
         <button class="btn">Send Message</button>
 
