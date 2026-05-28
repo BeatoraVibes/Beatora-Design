@@ -544,49 +544,134 @@
 
     }
 
-    @media(max-width:600px){
+    @media(max-width:980px){
 
-      .hero{
-        padding-top:130px;
-      }
+  nav{
+    padding:15px 5%;
+  }
 
-      .hero-text h1{
-        font-size:58px;
-      }
+  nav ul{
+    display:none;
+  }
 
-      .hero-text p{
-        font-size:16px;
-      }
+  .logo{
+    font-size:22px;
+    max-width:60%;
+  }
 
-      .section-title h2{
-        font-size:40px;
-      }
+  .btn{
+    padding:10px 18px;
+    font-size:14px;
+  }
 
-      .combo-left h2{
-        font-size:30px;
-      }
+  .hero{
+    padding-top:130px;
+    padding-left:6%;
+    padding-right:6%;
+  }
 
-      .combo-right{
-        text-align:left;
-      }
+  .hero-content{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
 
-      .combo-right h1{
-        font-size:42px;
-      }
+  .hero-text h1{
+    font-size:52px;
+    line-height:1.05;
+    word-break:break-word;
+  }
 
-      .btn,
-      .outline-btn{
-        width:100%;
-        text-align:center;
-      }
+  .hero-text p{
+    font-size:16px;
+    line-height:1.8;
+  }
 
-      .whatsapp{
-        width:58px;
-        height:58px;
-        font-size:30px;
-      }
+  .glass-card{
+    padding:30px 22px;
+    width:100%;
+    max-width:100%;
+  }
 
-    }
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .section-title h2{
+    font-size:38px;
+  }
+
+  .pricing-container{
+    grid-template-columns:1fr;
+  }
+
+  .portfolio-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-container{
+    grid-template-columns:1fr;
+  }
+
+  .combo-offer{
+    padding:30px 22px;
+  }
+
+  .combo-left h2{
+    font-size:30px;
+  }
+
+  .combo-left p{
+    font-size:16px;
+  }
+
+  .combo-right{
+    text-align:left;
+    width:100%;
+  }
+
+  .combo-right h1{
+    font-size:42px;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .hero-text h1{
+    font-size:46px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+    width:100%;
+  }
+
+  .btn,
+  .outline-btn{
+    width:100%;
+    text-align:center;
+  }
+
+  .service-box,
+  .price-card,
+  .contact-info,
+  form{
+    padding:28px 20px;
+  }
+
+  .portfolio-item{
+    height:260px;
+  }
+
+  .whatsapp{
+    width:56px;
+    height:56px;
+    font-size:28px;
+    right:18px;
+    bottom:18px;
+  }
+
+}
 
   </style>
 </head>
@@ -896,15 +981,15 @@
 
       </div>
 
-      <div class="portfolio-item">
+      <a href="https://shopeasesample.vercel.app" target="_blank" class="portfolio-item">
 
-        <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop">
+  <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop">
 
-        <div class="overlay">
-          <h3>Ecommerce Store</h3>
-        </div>
+  <div class="overlay">
+    <h3>Shopease Ecommerce</h3>
+  </div>
 
-      </div>
+</a>
 
       <div class="portfolio-item">
 
